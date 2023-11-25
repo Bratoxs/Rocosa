@@ -7,6 +7,7 @@ namespace Rocosa.Models
         [Key]
         public int Id { get; set; }
 
+        [Required(ErrorMessage = "El Nombre del Tipo de Aplicación es obligatorio.")]
         public string Nombre { get; set; }
     }
 }

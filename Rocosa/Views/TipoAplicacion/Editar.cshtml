@@ -1,17 +1,18 @@
 ﻿@model Rocosa.Models.TipoAplicacion
 @{
-    ViewData["Title"] = "Crear";
+    ViewData["Title"] = "Editar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<form method="post" asp-action="Crear">
+<form method="post" asp-action="Editar">
+    <input asp-for="Id" hidden />
     <div class="border p-3">
 
         @* Se agrega para que los mensajes por vallidación aparecezcan *@
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
         <div class="form-group row">
-            <h2 class="text-info pl-3">Nueva Tipo Aplicación</h2>
+            <h2 class="text-info pl-3">Editar Tipo Aplicación</h2>
         </div>
 
         <div class="container">
@@ -24,7 +25,7 @@
             </div>
             <br />
             <div class="d-grid gap-2 d-md-block">
-                <button type="submit" class="btn btn-primary">Crear Nuevo</button>
+                <button type="submit" class="btn btn-primary">Actualizar</button>
                 <a asp-controller="TipoAplicacion" asp-action="Index" class="btn btn-success">Regresar</a>
             </div>
         </div>

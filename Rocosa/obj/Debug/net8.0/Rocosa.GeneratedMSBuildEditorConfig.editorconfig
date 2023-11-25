@@ -30,6 +30,14 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXENyZWFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Proyectos Asp Net Core MVC(Net 8)/Rocosa/Rocosa/Views/Categoria/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Proyectos Asp Net Core MVC(Net 8)/Rocosa/Rocosa/Views/Categoria/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXEVsaW1pbmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Proyectos Asp Net Core MVC(Net 8)/Rocosa/Rocosa/Views/Categoria/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -52,6 +60,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Proyectos Asp Net Core MVC(Net 8)/Rocosa/Rocosa/Views/TipoAplicacion/Crear.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0FwbGljYWNpb25cQ3JlYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Proyectos Asp Net Core MVC(Net 8)/Rocosa/Rocosa/Views/TipoAplicacion/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0FwbGljYWNpb25cRWRpdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Proyectos Asp Net Core MVC(Net 8)/Rocosa/Rocosa/Views/TipoAplicacion/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0FwbGljYWNpb25cRWxpbWluYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Proyectos Asp Net Core MVC(Net 8)/Rocosa/Rocosa/Views/TipoAplicacion/Index.cshtml]

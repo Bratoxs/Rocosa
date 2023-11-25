@@ -923,3 +923,4 @@ D:\Proyectos Asp Net Core MVC(Net 8)\Rocosa\Rocosa\bin\Debug\net8.0\runtimes\win
 D:\Proyectos Asp Net Core MVC(Net 8)\Rocosa\Rocosa\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 D:\Proyectos Asp Net Core MVC(Net 8)\Rocosa\Rocosa\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 D:\Proyectos Asp Net Core MVC(Net 8)\Rocosa\Rocosa\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+D:\Proyectos Asp Net Core MVC(Net 8)\Rocosa\Rocosa\obj\Debug\net8.0\Rocosa.sourcelink.json

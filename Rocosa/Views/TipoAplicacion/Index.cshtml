@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Rocosa.Models.Categoria>
+﻿@model IEnumerable<Rocosa.Models.TipoAplicacion>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,39 +7,42 @@
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="text-primary">Lista de Categorias</h2>
+            <h2 class="text-primary">Lista de Tipos de Aplicación</h2>
         </div>
         <div class="col-6 text-end">
-            <a asp-controller="Categoria" asp-action="Crear" class="btn btn-primary">Nueva Categoria</a>
+            <a asp-controller="TipoAplicacion" asp-action="Crear" class="btn btn-primary"><i class="bi bi-plus-square-fill"></i> Nuevo Tipo de Aplicación</a>
         </div>
     </div>
     <br />
 
-    @if(Model.Count() > 0)
+    @if (Model.Count() > 0)
     {
         <table class="table table-bordered table-striped" style="width:100%">
             <thead>
                 <tr>
-                    <th>Nombre Categoria</th>
-                    <th>Orden</th>
+                    <th>Nombre Tipo Aplicación</th>
                     <th></th>
                 </tr>
             </thead>
-                <tbody>
-                    @foreach(var item in Model)
-                    {
-                        <tr>
-                            <th width="50%">@item.NombreCategoria</th>
-                            <th width="30%">@item.MostrarOrden</th>
-                            <th></th>
-                        </tr>
-                    }
-                </tbody>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th width="50%">@item.Nombre</th>
+                        <th class="text-center">
+                            <div class="w-75 btn-group" role="group">
+                                <a asp-controller="TipoAplicacion" asp-action="Editar" asp-route-Id="@item.Id" class="btn btn-primary mx-2"><i class="bi bi-pencil-square"></i></a>
+                                <a asp-controller="TipoAplicacion" asp-action="Eliminar" asp-route-Id="@item.Id" class="btn btn-danger mx-2"><i class="bi bi-trash3-fill"></i></a>
+                            </div>
+                        </th>
+                    </tr>
+                }
+            </tbody>
         </table>
     }
     else
     {
-        <p>No hay registros de Categoria</p>
+        <p>No hay registros de Tipo de Aplicación</p>
     }
 </div>
 
