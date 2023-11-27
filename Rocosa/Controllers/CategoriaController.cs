@@ -32,7 +32,7 @@ namespace Rocosa.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Crear(Categoria categoria) //Recibe el modelo Categoria
+        public IActionResult Crear(Categoria categoria) //Recibe el modelo Categoría
         {
             if (ModelState.IsValid) //Si el modelo cumple con todas las validaciones de los campos
             {
@@ -66,7 +66,7 @@ namespace Rocosa.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Editar(Categoria categoria) //Recibe el modelo Categoria
+        public IActionResult Editar(Categoria categoria) //Recibe el modelo Categoría
         {
             if (ModelState.IsValid) //Si el modelo cumple con todas las validaciones de los campos
             {
@@ -100,7 +100,7 @@ namespace Rocosa.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Eliminar(Categoria categoria) //Recibe el modelo Categoria
+        public IActionResult Eliminar(Categoria categoria) //Recibe el modelo Categoría
         {
             if (categoria == null) //Si el modelo cumple con todas las validaciones de los campos
             {

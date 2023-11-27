@@ -7,44 +7,44 @@
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="text-primary">Lista de Categorias</h2>
+            <h2 class="text-primary">Lista de Categorías</h2>
         </div>
         <div class="col-6 text-end">
-            <a asp-controller="Categoria" asp-action="Crear" class="btn btn-primary"><i class="bi bi-plus-square-fill"></i> Nueva Categoria</a>
+            <a asp-controller="Categoria" asp-action="Crear" class="btn btn-primary"><i class="bi bi-plus"></i></i> Nueva Categoría</a>
         </div>
     </div>
     <br />
 
-    @if(Model.Count() > 0)
+    @if (Model.Count() > 0)
     {
         <table class="table table-bordered table-striped" style="width:100%">
             <thead>
                 <tr>
-                    <th>Nombre Categoria</th>
+                    <th>Nombre Categoría</th>
                     <th>Orden</th>
                     <th></th>
                 </tr>
             </thead>
-                <tbody>
-                    @foreach(var item in Model)
-                    {
-                        <tr>
-                            <th width="50%">@item.NombreCategoria</th>
-                            <th width="30%">@item.MostrarOrden</th>
-                            <th class="text-center">
-                                <div class="w-75 btn-group" role="group">
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th width="50%">@item.NombreCategoria</th>
+                        <th width="30%">@item.MostrarOrden</th>
+                        <th class="text-center">
+                            <div class="w-75 btn-group" role="group">
                                 <a asp-controller="Categoria" asp-action="Editar" asp-route-Id="@item.Id" class="btn btn-primary mx-2"><i class="bi bi-pencil-square"></i></a>
                                 <a asp-controller="Categoria" asp-action="Eliminar" asp-route-Id="@item.Id" class="btn btn-danger mx-2"><i class="bi bi-trash3-fill"></i></a>
-                                </div>
-                            </th>
-                        </tr>
-                    }
-                </tbody>
+                            </div>
+                        </th>
+                    </tr>
+                }
+            </tbody>
         </table>
     }
     else
     {
-        <p>No hay registros de Categoria</p>
+        <p>No hay registros de Categoría</p>
     }
 </div>
 

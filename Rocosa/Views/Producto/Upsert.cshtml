@@ -1,0 +1,133 @@
+﻿@model Rocosa.Models.ViewModels.ProductoVM
+@{
+    var titulo = "Crear Nuevo Producto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@* Para cargar imagenes se usa enctype="multipart/form-data" en el form *@
+<form method="post" asp-action="Upsert" enctype="multipart/form-data">
+    @if (Model.Producto.Id != 0)
+    {
+        titulo = "Editar Producto";
+        <input asp-for="Producto.Id" hidden />
+    }
+
+    <div class="border p-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group row">
+            <h2 class="text-info pl-3">@titulo</h2>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label asp-for="Producto.NombreProducto" class="form-label">Nombre Producto</label>
+                            <input asp-for="Producto.NombreProducto" class="form-control">
+                            <span asp-validation-for="Producto.NombreProducto" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label asp-for="Producto.Precio" class="form-label">Precio</label>
+                            <input asp-for="Producto.Precio" class="form-control">
+                            <span asp-validation-for="Producto.Precio" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label asp-for="Producto.DescripcionCorta" class="form-label">Descripción Corta</label>
+                            <input asp-for="Producto.DescripcionCorta" class="form-control">
+                            <span asp-validation-for="Producto.DescripcionCorta" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label asp-for="Producto.DescripcionProducto" class="form-label">Descripción del Producto</label>
+                            <textarea asp-for="Producto.DescripcionProducto" class="form-control summernote"></textarea>
+                            <span asp-validation-for="Producto.DescripcionProducto" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label asp-for="Producto.ImagenUrl" class="form-label">Imagen</label>
+                            <input type="file" name="files" id="imagenId" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label asp-for="Producto.CategoriaId" class="form-label">Categoría</label>
+                            @* Forma 1:
+                            <select asp-for="CategoriaId" asp-items="@ViewBag.categoriaDropDown" class="form-select">
+                            <option disabled selected>-- Seleccione una Categoría --</option>
+                            </select> *@
+
+                            @* Forma 2: *@
+                            <select asp-for="Producto.CategoriaId" asp-items="@Model.CategoriaLista" class="form-select">
+                                <option disabled selected>-- Seleccione una Categoría --</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label asp-for="Producto.TipoAplicacionId" class="form-label">Tipo de Aplicación</label>
+                            <select asp-for="Producto.TipoAplicacionId" asp-items="@Model.TipoAplicacionLista" class="form-select">
+                                <option disabled selected>-- Seleccione un Tipo de Aplicación --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="d-grid gap-2 d-md-block">
+                        @if (Model.Producto.Id != 0)
+                        {
+                            <button type="submit" class="btn btn-primary">Actualizar</button>
+                        }
+                        else
+                        {
+                            @* onclick llama a una función JavaScript *@
+                            <button type="submit" onclick="return validarImagen()" class="btn btn-primary">Crear Nuevo</button>
+                        }
+                        <a asp-controller="Producto" asp-action="Index" class="btn btn-success">Regresar</a>
+                    </div>
+                </div>
+                <div class="col-4">
+                    @if (Model.Producto.Id != 0)
+                    {
+                        <img src="@WC.ImagenRuta@Model.Producto.ImagenUrl" width="100%" style="border-radius:5px; border:1px solid #bbb">
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@* Validaciones para los campos *@
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+    <script>
+        //Texto enriquecido en el campo Descripción del Producto
+        $(document).ready(function () {
+            $('.summernote').summernote({
+                height: 250
+            });
+        });
+
+        //Mostrar un alerta cuando no se cargue una imagen
+        function validarImagen() {
+            if (document.getElementById("imagenId").value == "") {
+                Swal.fire({
+                    title: "Error",
+                    text: "Seleccione una Imagen!",
+                    icon: "error"
+                });
+                return false;
+            }
+            return true;
+        }
+    </script>
+}
